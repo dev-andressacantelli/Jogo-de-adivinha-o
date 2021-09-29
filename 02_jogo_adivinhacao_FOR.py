@@ -1,9 +1,29 @@
+Experimente agoraTente novamente mais tardeNão mostrar novamente
+import random
+
 print("*********************************")
 print("Bem vindo ao jogo de adivinhação, melhor de três!")
 print("*********************************")
 
-numero_secreto = 42
-total_de_tentativas = 3
+#round: arredonda n°;  random: n° aleatório
+#numero_secreto = round(random.random() * 100)
+
+#var = n°aleatório.delimitado(começa,termina)
+numero_secreto = random.randrange(1,101)
+total_de_tentativas = 0
+#print(numero_secreto)
+
+print("Qual nível de dificuldade?")
+print("(1) Fácil (2) Médio (3) Difícil")
+
+nivel = int(input("Define o nível: "))
+
+if(nivel == 1):
+    total_de_tentativas = 20
+elif(nivel == 2):
+    total_de_tentativas = 10
+else:
+    total_de_tentativas = 5
 
 #No for in range , declara-se a var rodada dentro do laço;
 #Se faz necessário adicionar um +1 ao final do parâmetro p/ que vá até 3, caso contrário irá até 2;
@@ -34,4 +54,5 @@ for rodada in range(1, total_de_tentativas + 1):
 
     rodada = rodada + 1
 
-print("Fim do jogo!")
+print("Fim do jogo! O número secreto era:",numero_secreto)
+
